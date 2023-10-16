@@ -1,0 +1,25 @@
+package SeverPackage;
+
+public class calcul {
+	 public int a;
+	 public char x;
+	 public int b;
+		public  calcul (int a,char x,int b) {
+			this.a=a;
+			this.x=x;
+			this.b=b;}
+		public int getOperand1(){
+			return a;
+		}
+		public int getOperand2(){
+			return b;
+		}
+		public char getOperator() {
+			return x;
+		}
+
+
+
+}
+
+

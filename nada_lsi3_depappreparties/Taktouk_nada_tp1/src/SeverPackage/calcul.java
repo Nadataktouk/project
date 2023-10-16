@@ -1,0 +1,97 @@
+/*package SeverPackage;
+
+public class calcul {
+	 public int a;
+	 public char x;
+	 public int b;
+		public  calcul (int a,char x,int b) {
+			this.a=a;
+			this.x=x;
+			this.b=b;}
+		public int getOperand1(){
+			return a;
+		}
+		public int getOperand2(){
+			return b;
+		}
+		public char getOperator() {
+			return x;
+		}
+
+
+
+}*/
+
+
+
+
+
+
+
+package SeverPackage;
+import java.io.Serializable;
+
+// Créez une classe Operation qui implémente Serializable.
+public class calcul implements Serializable {
+    /**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+	private int operand1;
+    private char operator;
+    private int operand2;
+
+    public calcul(int operand1, char operator, int operand2) {
+        this.operand1 = operand1;
+        this.operator = operator;
+        this.operand2 = operand2;
+    }
+
+    public int getOperand1() {
+        return operand1;
+    }
+
+    public char getOperator() {
+        return operator;
+    }
+
+    public int getOperand2() {
+        return operand2;
+    }
+
+	public void setOperand1(int operand1) {
+		this.operand1 = operand1;
+	}
+
+	public void setOperator(char operator) {
+		this.operator = operator;
+	}
+
+	public void setOperand2(int operand2) {
+		this.operand2 = operand2;
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

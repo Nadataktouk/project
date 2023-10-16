@@ -1,0 +1,111 @@
+	/*package ClientPackage;
+
+/*import java.io.IOException;
+import java.io.InputStream;
+import java.io.OutputStream;
+import java.net.InetAddress;
+import java.net.Socket;
+import java.util.Scanner;
+
+public class Client {
+
+	//public static void main(String[] args) throws IOException {
+		
+		// La premiÃ¨re Ã©tape : crÃ©ation de l'objet Socket cÃ´tÃ© client
+		//int serverPort = 1234;
+		
+		
+	/*Scanner val;
+		System.out.println("Je suis un client  pas encore connectÃ©"); 
+		
+		
+		
+		InetAddress host = InetAddress.getByName("localhost");
+		
+		Socket socket = new Socket(host, serverPort);
+		
+		System.out.println("Je suis un client connectÃ©"); 
+		
+		
+		
+		
+		
+		System.out.println("Entrer la valeur");
+		try{
+		
+		val = new Scanner(System.in);
+		int i=val.nextInt();
+		OutputStream os = socket.getOutputStream();
+		os.write(i);
+		/*On reprend l'exercie 3 du TD 1,
+		* Dans cet exemple on suppose que le client va recevoir un rÃ©sultat auprÃ©s du serveur. (cÃ d : 
+		 * un Ã©vÃ©nement de rÃ©ception (selon la partie gestion d'horloge)
+		 * Pour cela on dÃ©finit dans cette application un objet de type inputstream (pour prÃ©parer la lecture d'un octet et l'afficher)*/
+		
+	/* InputStream is = socket.getInputStream();
+		System.out.println(is.read());
+		
+		}
+		catch (Exception e) {e.printStackTrace();}
+		
+		
+		
+		
+		
+	
+		
+		// La derniÃ¨re Ã©tape : fermeture de la socket
+		socket.close();
+
+	}
+
+}*/
+
+
+
+
+
+
+package ClientPackage;
+
+import java.io.IOException;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
+import java.net.Socket;
+import SeverPackage.calcul;
+public class Client {
+    public static void main(String[] args) {
+        try {
+            Socket socket = new Socket("localhost", 1234);
+
+            ObjectOutputStream out = new ObjectOutputStream(socket.getOutputStream());
+
+            calcul  operation = new calcul(34, '*', 55); // Exemple d'opération
+            out.writeObject(operation);
+
+
+            ObjectInputStream in = new ObjectInputStream(socket.getInputStream());
+            int result = (int) in.readObject();
+
+            System.out.println("Résultat : " + result);
+
+            socket.close();
+        } catch (IOException | ClassNotFoundException e) {
+            e.printStackTrace();
+        }
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
