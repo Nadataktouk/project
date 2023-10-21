@@ -3,11 +3,25 @@
 targetNamespace="http://www.example.org/BanqueService"
 xmlns:tns="http://www.example.org/BanqueService"
 elementFormDefault="qualified">
-<element name="BanqueService">
-<complexType>
-<sequence>
-<element name="conversion" type="tns:conversion"></element>
-</sequence>
-</complexType>
-</element>
+	<element name="BanqueService" type="tns:BanqueService"></element>
+	
+    <attribute name="conversion" type="string"></attribute>
+
+    <complexType name="BanqueService">
+    	<attribute name="getComptes" type="list"></attribute>
+    	<attribute name="conversion" type="double"></attribute>
+    	<attribute name="getCompte" type="string"></attribute>
+    </complexType>
+
+    
+
+    <attribute name="code" type="string"></attribute>
+
+    <attribute name="solde" type="string"></attribute>
+
+    <attribute name="dateCreation" type="string"></attribute>
+
+    <complexType name="compte"></complexType>
+
+    <complexType name="list"></complexType>
 </schema>
